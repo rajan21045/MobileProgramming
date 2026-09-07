@@ -1,48 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="24dp">
 
-    <!-- Username-->
+    <!-- Username -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Username"
         android:textSize="24sp"
-        android:text="@string/username"
-        android:layout_marginTop="124dp"
-        android:layout_marginStart="24dp" />
+        android:layout_marginTop="100dp" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
         android:hint="Enter Your Name"
-        android:layout_marginHorizontal="24dp" />
+        android:textSize="20sp"
+        android:inputType="textPersonName" />
 
-    <!-- Password-->
+    <!-- Password -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
         android:text="Password"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="24dp" />
+        android:textSize="24sp"
+        android:layout_marginTop="40dp" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
         android:hint="Enter Password"
-        android:layout_marginHorizontal="24dp" />
+        android:textSize="20sp"
+        android:inputType="textPassword" />
 
-    <!-- Login Button-->
+    <!-- Login Button -->
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
         android:text="Login"
         android:layout_marginTop="24dp" />
 
+    <!-- Register Message -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't Have An Account?"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="40dp" />
 
-  </LinearLayout>
+    <!-- Register Button -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>
