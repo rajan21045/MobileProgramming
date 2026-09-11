@@ -20,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Your Name"
+        android:id="@+id/etUserName"
         android:textSize="20sp"
         android:inputType="textPersonName" />
 
@@ -40,6 +41,7 @@
 
     <!-- Login Button -->
     <Button
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"

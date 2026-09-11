@@ -1,6 +1,10 @@
 package com.example.application;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +23,16 @@ public class RegistrationActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button btnLogin = findViewById(R.id.btnRegistration);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(RegistrationActivity.this, "Home Clicked", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(RegistrationActivity.this, HomeActivity.class);
+                startActivity(i);
+            }
         });
     }
 }
