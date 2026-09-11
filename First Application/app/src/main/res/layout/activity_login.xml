@@ -1,43 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:padding="24dp">
 
-    <!-- Username -->
+    <!-- App/Screen Title -->
     <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
-        android:textSize="24sp"
-        android:layout_marginTop="100dp" />
+        android:text="Welcome Back"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginTop="80dp" />
 
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login to continue"
+        android:textSize="16sp"
+        android:textColor="#757575"
+        android:layout_marginTop="8dp" />
+
+    <!-- Username -->
     <EditText
+        android:id="@+id/etUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Your Name"
-        android:id="@+id/etUserName"
-        android:textSize="20sp"
-        android:inputType="textPersonName" />
+        android:hint="Username"
+        android:textSize="18sp"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:layout_marginTop="32dp" />
 
     <!-- Password -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password"
-        android:textSize="24sp"
-        android:layout_marginTop="40dp" />
-
     <EditText
+        android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Password"
-        android:textSize="20sp"
-        android:inputType="textPassword" />
+        android:hint="Password"
+        android:textSize="18sp"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:layout_marginTop="16dp" />
 
     <!-- Login Button -->
     <Button
@@ -47,21 +56,33 @@
         android:text="Login"
         android:layout_marginTop="24dp" />
 
-    <!-- Register Message -->
-    <TextView
-        android:layout_width="match_parent"
+    <!-- Register Row (whole row is now the tap target) -->
+    <LinearLayout
+        android:id="@+id/registrationRow"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't Have An Account?"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:layout_marginTop="40dp" />
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="8dp"
+        android:background="?attr/selectableItemBackground">
 
-    <!-- Register Button -->
-    <Button
-        android:id="@+id/btnRegistration"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:layout_marginTop="16dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account? " />
+
+        <TextView
+            android:id="@+id/btnRegistration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:gravity="center_vertical"
+            android:text="Register"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </LinearLayout>
