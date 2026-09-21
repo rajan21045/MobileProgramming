@@ -6,10 +6,9 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:padding="24dp">
 
         <!-- Full Name -->
@@ -17,8 +16,8 @@
             android:id="@+id/tvUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
             android:text="Full Name"
+            android:textSize="24sp"
             android:textStyle="bold"
             android:layout_marginTop="26dp" />
 
@@ -26,46 +25,53 @@
             android:id="@+id/etFullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_below="@id/tvUsername"
+            android:layout_marginTop="4dp"
             android:hint="Enter Your Name"
+            android:textSize="20sp"
             android:inputType="textPersonName"
-            android:autofillHints="name"
-            android:layout_marginTop="4dp" />
+            android:autofillHints="name" />
 
         <!-- Email Address -->
         <TextView
+            android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
+            android:layout_below="@id/etFullName"
+            android:layout_marginTop="16dp"
             android:text="Email Address"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_below="@id/tvEmail"
+            android:layout_marginTop="4dp"
             android:hint="Enter Your Email Address"
+            android:textSize="20sp"
             android:inputType="textEmailAddress"
-            android:autofillHints="emailAddress"
-            android:layout_marginTop="4dp" />
+            android:autofillHints="emailAddress" />
 
         <!-- Gender -->
         <TextView
+            android:id="@+id/tvGender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
+            android:layout_below="@id/etEmail"
+            android:layout_marginTop="16dp"
             android:text="Gender"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <RadioGroup
             android:id="@+id/radiogp1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="4dp">
+            android:layout_below="@id/tvGender"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radio1"
@@ -89,55 +95,82 @@
                 android:text="Other"
                 android:textSize="16sp"
                 android:layout_marginStart="12dp" />
+
         </RadioGroup>
+
+        <!-- City -->
+        <TextView
+            android:id="@+id/tvCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radiogp1"
+            android:layout_marginTop="16dp"
+            android:text="City"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCity"
+            android:layout_marginTop="4dp" />
 
         <!-- Password -->
         <TextView
+            android:id="@+id/tvPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
+            android:layout_below="@id/spCity"
+            android:layout_marginTop="16dp"
             android:text="Password"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_below="@id/tvPassword"
+            android:layout_marginTop="4dp"
             android:hint="Enter Password"
+            android:textSize="20sp"
             android:inputType="textPassword"
-            android:autofillHints="password"
-            android:layout_marginTop="4dp" />
+            android:autofillHints="password" />
 
         <!-- Confirm Password -->
         <TextView
+            android:id="@+id/tvConfirmPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
+            android:layout_below="@id/etPassword"
+            android:layout_marginTop="16dp"
             android:text="Confirm Password"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_below="@id/tvConfirmPassword"
+            android:layout_marginTop="4dp"
             android:hint="Confirm Password"
+            android:textSize="20sp"
             android:inputType="textPassword"
-            android:autofillHints="password"
-            android:layout_marginTop="4dp" />
+            android:autofillHints="password" />
 
         <!-- Registration Button -->
         <Button
             android:id="@+id/btnRegistration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/etConfirmPassword"
+            android:layout_marginTop="24dp"
             android:text="Registration"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginTop="24dp" />
+            android:textStyle="bold" />
 
-    </LinearLayout>
+    </RelativeLayout>
+
 </ScrollView>
