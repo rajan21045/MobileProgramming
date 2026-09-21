@@ -17,4 +17,12 @@
         android:textStyle="bold"
         android:layout_marginTop="10dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:id="@+id/btnFinish"
+        android:layout_marginTop="150dp"
+        android:layout_gravity="center"/>
+
 </LinearLayout>

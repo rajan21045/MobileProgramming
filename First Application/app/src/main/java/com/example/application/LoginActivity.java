@@ -13,27 +13,37 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.application.HomeActivity;
+import com.example.application.R;
+
 public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+        ViewCompat.setOnApplyWindowInsetsListener(
+                findViewById(R.id.main),
+                (v, insets) -> {
 
-            v.setPadding(
-                    systemBars.left,
-                    systemBars.top,
-                    systemBars.right,
-                    systemBars.bottom
-            );
+                    Insets systemBars =
+                            insets.getInsets(WindowInsetsCompat.Type.systemBars());
 
-            return insets;
-        });
+                    v.setPadding(
+                            systemBars.left,
+                            systemBars.top,
+                            systemBars.right,
+                            systemBars.bottom
+                    );
 
+                    return insets;
+                }
+        );
+
+        // Username EditText
         EditText etUsername = findViewById(R.id.etUserName);
 
         // Login Button
@@ -45,7 +55,11 @@ public class LoginActivity extends AppCompatActivity {
 
                 String username = etUsername.getText().toString();
 
-                Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+                Intent i = new Intent(
+                        LoginActivity.this,
+                        HomeActivity.class
+                );
+
                 i.putExtra("username", username);
                 startActivity(i);
             }
@@ -64,9 +78,14 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT
                 ).show();
 
-                Intent i = new Intent(LoginActivity.this, RegistrationActivity.class);
+                Intent i = new Intent(
+                        LoginActivity.this,
+                        RegistrationActivity.class
+                );
+
                 startActivity(i);
             }
         });
     }
 }
+
