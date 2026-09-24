@@ -13,7 +13,7 @@
 
         <!-- Full Name -->
         <TextView
-            android:id="@+id/tvUsername"
+            android:id="@+id/tvFullName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Full Name"
@@ -25,7 +25,7 @@
             android:id="@+id/etFullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvUsername"
+            android:layout_below="@id/tvFullName"
             android:layout_marginTop="4dp"
             android:hint="Enter Your Name"
             android:textSize="20sp"
@@ -76,14 +76,14 @@
             <RadioButton
                 android:id="@+id/radio1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:text="Male"
                 android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/radio2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:text="Female"
                 android:textSize="16sp"
                 android:layout_marginStart="12dp" />
@@ -91,7 +91,7 @@
             <RadioButton
                 android:id="@+id/radio3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:text="Other"
                 android:textSize="16sp"
                 android:layout_marginStart="12dp" />
@@ -112,7 +112,7 @@
         <Spinner
             android:id="@+id/spCity"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_below="@id/tvCity"
             android:layout_marginTop="4dp" />
 
@@ -164,10 +164,10 @@
         <Button
             android:id="@+id/btnRegistration"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_below="@id/etConfirmPassword"
             android:layout_marginTop="24dp"
-            android:text="Registration"
+            android:text="Register"
             android:textSize="16sp"
             android:textStyle="bold" />
 

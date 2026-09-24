@@ -29,6 +29,7 @@ public class RegistrationActivity extends AppCompatActivity {
         ViewCompat.setOnApplyWindowInsetsListener(
                 findViewById(R.id.main),
                 (v, insets) -> {
+
                     Insets systemBars = insets.getInsets(
                             WindowInsetsCompat.Type.systemBars()
                     );
@@ -70,26 +71,36 @@ public class RegistrationActivity extends AppCompatActivity {
 
         spCity.setAdapter(adapter);
 
-
         // Registration Button
         Button btnRegistration = findViewById(R.id.btnRegistration);
 
         btnRegistration.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
-                String selectedCity = spCity.getSelectedItem().toString();
+                String selectedCity =
+                        spCity.getSelectedItem().toString();
 
-                Toast.makeText(
-                        RegistrationActivity.this,
-                        "Selected City: " + selectedCity,
-                        Toast.LENGTH_SHORT
-                ).show();
+                // Check city selection
+                if (selectedCity.equals("Select City")) {
 
+                    Toast.makeText(
+                            RegistrationActivity.this,
+                            "Please select your city",
+                            Toast.LENGTH_SHORT
+                    ).show();
+
+                    return;
+                }
+
+                // Send city to HomeActivity
                 Intent i = new Intent(
                         RegistrationActivity.this,
                         HomeActivity.class
                 );
+
+                i.putExtra("city", selectedCity);
 
                 startActivity(i);
             }

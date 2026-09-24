@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -12,9 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import com.example.application.HomeActivity;
-import com.example.application.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -25,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
+        // Handle system bars
         ViewCompat.setOnApplyWindowInsetsListener(
                 findViewById(R.id.main),
                 (v, insets) -> {
@@ -43,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
         );
 
-        // Username EditText
+        // Username
         EditText etUsername = findViewById(R.id.etUserName);
 
         // Login Button
@@ -53,39 +52,43 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String username = etUsername.getText().toString();
+                String username = etUsername.getText().toString().trim();
 
-                Intent i = new Intent(
+                if (username.isEmpty()) {
+                    Toast.makeText(
+                            LoginActivity.this,
+                            "Please enter username",
+                            Toast.LENGTH_SHORT
+                    ).show();
+
+                    return;
+                }
+
+                Intent intent = new Intent(
                         LoginActivity.this,
                         HomeActivity.class
                 );
 
-                i.putExtra("username", username);
-                startActivity(i);
+                intent.putExtra("username", username);
+
+                startActivity(intent);
             }
         });
 
-        // Registration Button
-        Button btnRegistration = findViewById(R.id.btnRegistration);
+        // Registration Button (this is a TextView in the layout, not a Button)
+        TextView btnRegistration = findViewById(R.id.btnRegistration);
 
         btnRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(
-                        LoginActivity.this,
-                        "Register Clicked",
-                        Toast.LENGTH_SHORT
-                ).show();
-
-                Intent i = new Intent(
+                Intent intent = new Intent(
                         LoginActivity.this,
                         RegistrationActivity.class
                 );
 
-                startActivity(i);
+                startActivity(intent);
             }
         });
     }
 }
-
