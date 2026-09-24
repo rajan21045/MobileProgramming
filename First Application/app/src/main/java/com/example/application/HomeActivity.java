@@ -1,7 +1,9 @@
 package com.example.application;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -33,20 +35,23 @@ public class HomeActivity extends AppCompatActivity {
             return insets;
         });
 
-        String username = getIntent().getStringExtra("username");
+        ListView listView = findViewById(R.id.listView);
 
-        TextView tvUsername = findViewById(R.id.tvUsername);
-        tvUsername.setText("Welcome, " + username);
-        Button btnFinish = findViewById(R.id.btnFinish);
-        btnFinish.setOnClickListener(v -> showDialog());
+        String[] internships = {
+                "Android Developer Intern\nTech Solutions - Kathmandu",
+                "Flutter Developer Intern\nABC Software - Lalitpur",
+                "Java Developer Intern\nCode Nepal - Kathmandu",
+                "Web Developer Intern\nDigital Nepal - Remote",
+                "Python Developer Intern\nInnovate Tech - Pokhara"
+        };
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_list_item_1,
+                internships
+        );
+
+        listView.setAdapter(adapter);
     }
 
-    public void showDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Exit App");
-        builder.setMessage("Are you sure you want to exit the app?");
-        builder.setPositiveButton("Yes", (dialog, which) -> finishAffinity());
-        builder.setNegativeButton("No", null);
-        builder.show();
-    }
 }
