@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:clipToPadding="false">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="24dp">
 
-        <!-- Full Name -->
         <TextView
             android:id="@+id/tvFullName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="Full Name"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginTop="26dp" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etFullName"
@@ -28,11 +27,10 @@
             android:layout_below="@id/tvFullName"
             android:layout_marginTop="4dp"
             android:hint="Enter Your Name"
-            android:textSize="20sp"
             android:inputType="textPersonName"
-            android:autofillHints="name" />
+            android:autofillHints="name"
+            android:textSize="18sp" />
 
-        <!-- Email Address -->
         <TextView
             android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
@@ -50,11 +48,10 @@
             android:layout_below="@id/tvEmail"
             android:layout_marginTop="4dp"
             android:hint="Enter Your Email Address"
-            android:textSize="20sp"
             android:inputType="textEmailAddress"
-            android:autofillHints="emailAddress" />
+            android:autofillHints="emailAddress"
+            android:textSize="18sp" />
 
-        <!-- Gender -->
         <TextView
             android:id="@+id/tvGender"
             android:layout_width="wrap_content"
@@ -84,21 +81,20 @@
                 android:id="@+id/radio2"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
+                android:layout_marginStart="12dp"
                 android:text="Female"
-                android:textSize="16sp"
-                android:layout_marginStart="12dp" />
+                android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/radio3"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
+                android:layout_marginStart="12dp"
                 android:text="Other"
-                android:textSize="16sp"
-                android:layout_marginStart="12dp" />
+                android:textSize="16sp" />
 
         </RadioGroup>
 
-        <!-- City -->
         <TextView
             android:id="@+id/tvCity"
             android:layout_width="wrap_content"
@@ -116,7 +112,6 @@
             android:layout_below="@id/tvCity"
             android:layout_marginTop="4dp" />
 
-        <!-- Password -->
         <TextView
             android:id="@+id/tvPassword"
             android:layout_width="wrap_content"
@@ -134,11 +129,10 @@
             android:layout_below="@id/tvPassword"
             android:layout_marginTop="4dp"
             android:hint="Enter Password"
-            android:textSize="20sp"
             android:inputType="textPassword"
-            android:autofillHints="password" />
+            android:autofillHints="newPassword"
+            android:textSize="18sp" />
 
-        <!-- Confirm Password -->
         <TextView
             android:id="@+id/tvConfirmPassword"
             android:layout_width="wrap_content"
@@ -156,17 +150,17 @@
             android:layout_below="@id/tvConfirmPassword"
             android:layout_marginTop="4dp"
             android:hint="Confirm Password"
-            android:textSize="20sp"
             android:inputType="textPassword"
-            android:autofillHints="password" />
+            android:autofillHints="newPassword"
+            android:textSize="18sp" />
 
-        <!-- Registration Button -->
         <Button
             android:id="@+id/btnRegistration"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_below="@id/etConfirmPassword"
             android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
             android:text="Register"
             android:textSize="16sp"
             android:textStyle="bold" />
