@@ -1,4 +1,4 @@
-package com.example.application;
+package com.example.displayalertdialogbox;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -6,7 +6,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.displayalertdialogbox.R;
 
 public class MainActivity extends AppCompatActivity {
 

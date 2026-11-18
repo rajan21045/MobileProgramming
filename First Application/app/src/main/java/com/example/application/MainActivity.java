@@ -1,7 +1,5 @@
 package com.example.application;
 
-import static android.os.Build.VERSION_CODES_FULL.R;
-
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;

@@ -1,10 +1,7 @@
 package com.example.application;
 
-import static android.os.Build.VERSION_CODES_FULL.R;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -15,9 +12,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class LoginActivity extends AppCompatActivity {
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,35 +26,32 @@ public class LoginActivity extends AppCompatActivity {
 
         Button btLogin = findViewById(R.id.btLogin);
         EditText etUserName = findViewById(R.id.etUserName);
-
-        btLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(LoginActivity.this,HomeActivity.class);
-                i.putExtra("NAME",etUserName.getText().toString());
-                startActivity(i);
-                finish();
-            }
-        });
-
-
+        EditText etPassword = findViewById(R.id.etPassword);
         Button btRegister = findViewById(R.id.btRegister);
-        btRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
+
+        btLogin.setOnClickListener(view -> {
+            String name = etUserName.getText().toString().trim();
+            String password = etPassword.getText().toString();
+
+            if (name.isEmpty()) {
+                etUserName.setError("Please enter your username");
+                etUserName.requestFocus();
+                return;
             }
+
+            if (password.isEmpty()) {
+                etPassword.setError("Please enter your password");
+                etPassword.requestFocus();
+                return;
+            }
+
+            Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+            i.putExtra("NAME", name);
+            startActivity(i);
+            finish();
         });
 
+        btRegister.setOnClickListener(view ->
+                startActivity(new Intent(LoginActivity.this, RegistrationActivity.class)));
     }
 }
-
-
-
-
-
-
-
-
-
-

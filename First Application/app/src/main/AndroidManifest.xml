@@ -11,36 +11,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Application">
 
-        <!-- Registration Activity -->
-        <activity
-            android:name=".RegistrationActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-
-        <!-- Login Activity -->
+        <!-- Login Activity (launcher) -->
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <!-- Registration Activity -->
+        <activity
+            android:name=".RegistrationActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Home Activity -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+
+        <!-- Detail Activity -->
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
+
         <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".DetailActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+            android:exported="false" />
+
     </application>
 
 </manifest>
